@@ -1,4 +1,7 @@
-[toc]
+注：
+- 标题我用了彩色，但貌似在github上预览不了，所以最好下载到本地再看  
+- 本文档适用于windows操作系统
+- 读这篇文章需要一定python和命令行基础
 
 # <font color=#f1d700>1.劝退</font>
 先看这个：https://manim.org.cn/problems/persuade2quit
@@ -158,24 +161,36 @@ manimgl start.py SquareToCircle
 ```
 manimgl start.py -ow
 ```
-- 渲染最后一帧并生成视频
+渲染最后一帧并生成视频
 ### <font color=#d470d6>ManimCE:</font>
 ```
 manim start.py SquareToCircle -pqm
 ```
-- 生成中等质量的视频
-> 以上是基础指令，可以输入:
+
+生成中等质量的视频
+
+---
+
+> 可以在代码中增加这些：
+> ```python
+> if __name__ == "__main__":
+>     __import__("os").system("manimgl start.py SquareToCircle")
 > ```
+> 这样就能直接点运行，而不用命令行了
+
+
+> 以上是基础指令，还可以输入
+> `
 > manimgl -help
-> ``` 
-> 或：
-> ```
+> `
+> 或
+> `
 > manim -help
-> ```
+> `
 > 来查看更多功能
 
 # <font color=#f1d700>5.报错</font>
 >类似这样的：
->> (process:13596): GLib-GIO-`WARNING` **: <font color=blue>21:44:32.108</font>: Unexpectedly, UWP app \`45747ThomasWeber.TurboWarpDesktop_1.7.1.0_x64__dx91esefr5w5e' (AUMId `45747ThomasWeber.TurboWarpDesktop_dx91esefr5w5e!TurboWarp') supports 3 extensions but has no verbs
+>> (process:13596): GLib-GIO-WARNING **: <font color=blue>21:44:32.108</font>: Unexpectedly, UWP app \`45747ThomasWeber.TurboWarpDesktop_1.7.1.0_x64__dx91esefr5w5e' (AUMId `45747ThomasWeber.TurboWarpDesktop_dx91esefr5w5e!TurboWarp') supports 3 extensions but has no verbs
 >
 >不必管他
