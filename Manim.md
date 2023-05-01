@@ -96,11 +96,11 @@ pip install xxx.whl
 最新版：
 ```
 git clone https://github.com/3b1b/manim.git
-cd manim-master
+cd manim
 pip install -r requirements.txt
 pip install -e .
 ```
-> 如果没有git那就download zip
+> 如果没有git那就download zip, 下载下来的文件夹叫manim-master
 
 pypi版：
 ```
@@ -190,7 +190,19 @@ manim start.py SquareToCircle -pqm
 > 来查看更多功能
 
 # <font color=#f1d700>5.报错</font>
->类似这样的：
->> (process:13596): GLib-GIO-WARNING **: <font color=blue>21:44:32.108</font>: Unexpectedly, UWP app \`45747ThomasWeber.TurboWarpDesktop_1.7.1.0_x64__dx91esefr5w5e' (AUMId `45747ThomasWeber.TurboWarpDesktop_dx91esefr5w5e!TurboWarp') supports 3 extensions but has no verbs
->
->不必管他
+1  
+类似这样的：
+> (process:13596): GLib-GIO-WARNING **: <font color=blue>21:44:32.108</font>: Unexpectedly, UWP app \`45747ThomasWeber.TurboWarpDesktop_1.7.1.0_x64__dx91esefr5w5e' (AUMId `45747ThomasWeber.TurboWarpDesktop_dx91esefr5w5e!TurboWarp') supports 3 extensions but has no verbs
+
+> xxx\lib\site-packages\pyglet\libs\win32\__init__.py:326: UserWarning: Could not set COM MTA mode. Unexpected behavior may occur.
+  warnings.warn("Could not set COM MTA mode. Unexpected behavior may occur.")
+
+不必管他  
+2
+> WARNING  You may be using Windows platform and have not specified the path of `temporary_storage`, which may cause OSError. So it is recommended to specify the `temporary_storage` in the config file (.yml)
+
+这是提示你没有设置视频和一些临时文件的存放地址  
+解决方法：
+- 进入manim库文件夹里，找到一个叫default_config.yml的文件，打开，这是manim的默认配置。其中有一行写着：temporary_storage: ""  
+- 在引号里写你想要存放视频和一些临时文件的地址
+- **这个文件里还有很多可以改的，比如window_position代表进入交互后窗口的位置；font是默认字体；background_color是底色。**
